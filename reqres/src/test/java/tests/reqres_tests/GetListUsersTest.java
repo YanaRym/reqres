@@ -33,6 +33,7 @@ public class GetListUsersTest {
                 .extract().body().asString();
         UsersList usersList = new Gson().fromJson(body, UsersList.class);
         String email = usersList.getData().get(2).getEmail();
-        System.out.println("User's email is: " + email);
+        String expectedEmail = "tobias.funke@reqres.in";
+        Assert.assertEquals(email, expectedEmail);
     }
 }

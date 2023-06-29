@@ -32,6 +32,7 @@ public class GetListResourceTest {
                 .extract().body().asString();
         ResourcesList resourcesList = new Gson().fromJson(body, ResourcesList.class);
         String colour = resourcesList.getData().get(0).getColor();
-        System.out.println("Color's number is: " + colour);
+        String expectedColour = "#98B2D1";
+        Assert.assertEquals(colour, expectedColour);
     }
 }
